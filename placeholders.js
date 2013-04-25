@@ -1,6 +1,7 @@
 /* 
  * Adds placeholder tag functionality to IE 9 or less
  * version 1.0 By Sean Madden 
+ * License : Use it anyway you want;
  * 
  * In the <head> or CSS file add,
  * CSS  : <style>* .auto-pholder-css{color:#a3a3a3 !important;}</style>
