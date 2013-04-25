@@ -6,7 +6,7 @@
 
 (function(){
 	
-	var style = 'auto-pholder-css';
+	var styleTag = 'auto-pholder-css';
 	var color = '#a3a3a3';
 
 	var ieVers = (function(){
@@ -39,10 +39,10 @@
 	}
 	
 	function addCss() {
-		var css = '.'+style+'{color:'+color+' !important;',
-		head = document.getElementsByTagName('head')[0],
-		style = document.createElement('style');
-
+		var css = '.'+ styleTag +'{color:'+color+' !important;}',
+			head = document.getElementsByTagName('head')[0],
+			style = document.createElement('style');
+console.log(css);
 		style.type = 'text/css';
 		if (style.styleSheet){
 		  style.styleSheet.cssText = css;
@@ -62,7 +62,7 @@
 
 	function valueSave(thisInput) {
 		if(thisInput.getAttribute("type") != "submit"){
-			thisInput.className += " " + style;
+			thisInput.className += " " + styleTag;
 			thisInput.onfocus = clicked;
 			thisInput.onblur = unclicked;
 			thisInput.tmpVal = thisInput.value;
@@ -73,14 +73,14 @@
 		if(this.value === this.tmpVal) {
 			this.value = "";
 		}
-		var regEx = RegExp("(?:^|\\s)" + style + "(?!\\S)","g");
+		var regEx = RegExp("(?:^|\\s)" + styleTag + "(?!\\S)","g");
 		this.className = this.className.replace(regEx,'');
 	}
 
 	function unclicked() {
 		if(this.value === "") {
 			this.value = this.tmpVal;
-			this.className += " " + style;
+			this.className += " " + styleTag;
 		}
 	}
 
