@@ -6,7 +6,7 @@
 
 (function(){
 	
-	var placeHolderCssName = 'auto-pholder-css';
+	var style = 'auto-pholder-css';
 	var color = '#a3a3a3';
 
 	var ieVers = (function(){
@@ -39,7 +39,7 @@
 	}
 	
 	function addCss() {
-		var css = '.'+placeHolderCssName+'{color:'+color+' !important;',
+		var css = '.'+style+'{color:'+color+' !important;',
 		head = document.getElementsByTagName('head')[0],
 		style = document.createElement('style');
 
@@ -62,7 +62,7 @@
 
 	function valueSave(thisInput) {
 		if(thisInput.getAttribute("type") != "submit"){
-			thisInput.className += " " + placeHolderCssName;
+			thisInput.className += " " + style;
 			thisInput.onfocus = clicked;
 			thisInput.onblur = unclicked;
 			thisInput.tmpVal = thisInput.value;
@@ -73,14 +73,14 @@
 		if(this.value === this.tmpVal) {
 			this.value = "";
 		}
-		var regEx = RegExp("(?:^|\\s)" + placeHolderCssName + "(?!\\S)","g");
+		var regEx = RegExp("(?:^|\\s)" + style + "(?!\\S)","g");
 		this.className = this.className.replace(regEx,'');
 	}
 
 	function unclicked() {
 		if(this.value === "") {
 			this.value = this.tmpVal;
-			this.className += " " + placeHolderCssName;
+			this.className += " " + style;
 		}
 	}
 
