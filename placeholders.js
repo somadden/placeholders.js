@@ -42,7 +42,7 @@
 		var css = '.'+ styleTag +'{color:'+color+' !important;}',
 			head = document.getElementsByTagName('head')[0],
 			style = document.createElement('style');
-console.log(css);
+
 		style.type = 'text/css';
 		if (style.styleSheet){
 		  style.styleSheet.cssText = css;
